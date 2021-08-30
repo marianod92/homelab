@@ -17,7 +17,7 @@ deploy:
 	git worktree add /tmp/book gh-pages
 	cp -rp book/* /tmp/book/
 	cd /tmp/book \
-		&& git add .
+		&& git add . \
 		&& git commit --message "Updates" || echo "No changes to commit" \
 		&& git push
 	git worktree remove /tmp/book
