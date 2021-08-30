@@ -21,5 +21,6 @@ deploy: book
 	cp -rp book/* /tmp/book/
 	cd /tmp/book && \
 		git add -A && \
-		git commit -m "deployed on $(shell date) by ${USER}" && \
+		git commit -m "Updates" && \
 		echo "PUSHING"
+	git worktree remove gh-pages
