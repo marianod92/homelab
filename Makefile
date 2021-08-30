@@ -14,13 +14,11 @@ book:
 	mdbook build .
 
 .PHONY: deploy
-deploy: book
-	@echo "====> deploying to github"
+deploy:
+	@echo "Deploying to GitHub Pages"
 	git worktree add /tmp/book gh-pages
-	rm -rf /tmp/book/*
 	cp -rp book/* /tmp/book/
-	cd /tmp/book && \
-		git add -A && \
-		git commit -m "Updates" && \
-		git push
+	cd /tmp/book \
+		&& git commit --all --message "Updates" || echo "No changes to commit" \
+		&& git push
 	git worktree remove /tmp/book
