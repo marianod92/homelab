@@ -22,5 +22,5 @@ deploy: book
 	cd /tmp/book && \
 		git add -A && \
 		git commit -m "Updates" && \
-		echo "PUSHING"
+		git push
 	git worktree remove /tmp/book
