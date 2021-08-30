@@ -23,4 +23,4 @@ deploy: book
 		git add -A && \
 		git commit -m "Updates" && \
 		echo "PUSHING"
-	git worktree remove gh-pages
+	git worktree remove /tmp/book
